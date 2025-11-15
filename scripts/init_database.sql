@@ -1,6 +1,10 @@
+--CREATE DATABASE 'DataWarehouse'
+
 CREATE DATABASE DataWarehouse;
 
-  
+--CREATE SCHEMAS
+
 CREATE SCHEMA bronze;
 CREATE SCHEMA silver;
 CREATE SCHEMA gold;
+
