@@ -1,3 +1,9 @@
+/*
+=============================================================
+Create Database and Schemas
+=============================================================
+*/
+
 --CREATE DATABASE 'DataWarehouse'
 
 CREATE DATABASE DataWarehouse;
