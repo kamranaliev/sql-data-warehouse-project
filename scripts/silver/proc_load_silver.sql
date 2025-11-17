@@ -13,8 +13,8 @@ CASE WHEN UPPER(TRIM(cst_marital_status)) = 'S' THEN 'Single'
 	 WHEN UPPER(TRIM(cst_marital_status)) = 'M' THEN 'Married'
 	 ELSE 'N/A'
 END cst_marital_status,
-CASE WHEN UPPER(TRIM(cst_gndr)) = 'F' THEN 'Female'
-	 WHEN UPPER(TRIM(cst_gndr)) = 'M' THEN 'Male'
+CASE WHEN UPPER(TRIM(cst_gndr)) IN ('F','FEMALE') THEN 'Female'
+	 WHEN UPPER(TRIM(cst_gndr)) IN ('M','MALE') THEN 'Male'
 	 ELSE 'N/A'
 END cst_gndr,
 cst_create_date
@@ -115,3 +115,17 @@ CASE WHEN UPPER(TRIM(gen)) IN ('F','FEMALE') THEN 'Female'
 	 ELSE 'N/A'
 END AS gen
 FROM bronze.erp_cust_az12
+ =============================================
+
+INSERT INTO silver.erp_loc_a101(
+cid,
+cntry
+)
+SELECT 
+REPLACE(cid,'-','') AS  cid,
+CASE WHEN TRIM(cntry) IN ('US','USA') THEN 'United States'
+ 	 WHEN TRIM(cntry) = 'DE' THEN 'Germany'
+	 WHEN TRIM(cntry) = '' OR cntry IS NULL THEN 'N/A'
+	 ELSE TRIM(cntry)
+END AS cntry
+FROM bronze.erp_loc_a101
