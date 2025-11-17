@@ -97,4 +97,21 @@ CASE WHEN sls_price <= 0  OR sls_price IS NULL OR sls_price != ABS(sls_sales) / 
 	 ELSE sls_price
 END AS sls_price
 FROM bronze.crm_sales_details
+==========================================
 
+INSERT INTO silver.erp_cust_az12(cid,
+bdate,
+gen
+)
+SELECT 
+TRIM(REPLACE(cid,'NAS','')) AS cid,
+
+CASE WHEN bdate > CURRENT_DATE THEN NULL
+	 ELSE bdate
+END AS bdate,
+
+CASE WHEN UPPER(TRIM(gen)) IN ('F','FEMALE') THEN 'Female'
+	 WHEN UPPER(TRIM(gen)) IN ('M','MALE') THEN 'Male'
+	 ELSE 'N/A'
+END AS gen
+FROM bronze.erp_cust_az12
