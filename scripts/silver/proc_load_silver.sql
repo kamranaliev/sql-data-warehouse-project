@@ -133,7 +133,7 @@ END AS sls_sales,  			-- Recalculate sales if original value is missing or incor
 sls_quantity,
 
 CASE 
-	 WHEN sls_price <= 0  OR sls_price IS NULL OR sls_price != ABS(sls_sales) / NULLIF(sls_quantity,0)
+	 WHEN sls_price <= 0  OR sls_price IS NULL 
 	 THEN ABS(sls_sales) / NULLIF(sls_quantity,0)
 	 ELSE sls_price
 END AS sls_price    		-- Derive price if original value is invalid
