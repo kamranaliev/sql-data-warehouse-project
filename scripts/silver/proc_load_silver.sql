@@ -17,6 +17,8 @@ Usage Example:
     CALL silver.load_silver();
 ===============================================================================
 */
+
+
 CREATE OR REPLACE PROCEDURE silver.load_silver()
 LANGUAGE plpgsql
 AS $$
