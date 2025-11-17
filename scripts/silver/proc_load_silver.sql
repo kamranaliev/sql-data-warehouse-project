@@ -25,8 +25,7 @@ ROW_NUMBER() OVER (PARTITION BY cst_id ORDER BY cst_create_date DESC ) AS flag_l
 FROM bronze.crm_cust_info
 )AS T WHERE flag_last = 1 ;
 
-==================================================
-
+=======================================================================
 
 INSERT INTO silver.crm_prd_info(
 prd_id,
@@ -56,7 +55,7 @@ CAST(prd_start_dt AS DATE) AS prd_start_dt,
 CAST(LEAD(prd_start_dt) OVER (PARTITION BY prd_key ORDER BY prd_start_dt) - INTERVAL '1 DAY' AS DATE)   AS prd_end_dt
 FROM bronze.crm_prd_info;
 
-=======================================================
+=======================================================================
 
 INSERT INTO silver.crm_sales_details (
 sls_ord_num,
@@ -97,7 +96,8 @@ CASE WHEN sls_price <= 0  OR sls_price IS NULL OR sls_price != ABS(sls_sales) / 
 	 ELSE sls_price
 END AS sls_price
 FROM bronze.crm_sales_details
-==========================================
+	
+=======================================================================
 
 INSERT INTO silver.erp_cust_az12(cid,
 bdate,
@@ -115,7 +115,8 @@ CASE WHEN UPPER(TRIM(gen)) IN ('F','FEMALE') THEN 'Female'
 	 ELSE 'N/A'
 END AS gen
 FROM bronze.erp_cust_az12
- =============================================
+	
+=======================================================================
 
 INSERT INTO silver.erp_loc_a101(
 cid,
@@ -129,3 +130,20 @@ CASE WHEN TRIM(cntry) IN ('US','USA') THEN 'United States'
 	 ELSE TRIM(cntry)
 END AS cntry
 FROM bronze.erp_loc_a101
+
+=======================================================================
+
+INSERT INTO silver.erp_px_cat_g1v2(
+id,
+cat,
+subcat,
+maintenance
+)
+SELECT 
+TRIM(id),
+TRIM(cat),
+TRIM(subcat),
+TRIM(maintenance)
+FROM bronze.erp_px_cat_g1v2
+
+
