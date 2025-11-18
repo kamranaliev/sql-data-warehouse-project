@@ -6,6 +6,8 @@ The goal is to demonstrate practical skills in **data engineering, ETL, data mod
 ----------
 
 ## **🔷 Architecture Overview**
+<img width="1012" height="641" alt="data_architecture" src="https://github.com/user-attachments/assets/fadc8653-2d34-43c3-b76d-ee1d70f272e3" />
+
 
 ### **Bronze Layer**
 
@@ -39,12 +41,13 @@ The goal is to demonstrate practical skills in **data engineering, ETL, data mod
 ## **🧱 Data Model**
 
 **Star Schema:**
+<img width="1011" height="763" alt="SALES DATA MART (Star Schema) drawio" src="https://github.com/user-attachments/assets/b8a48df8-91d5-46aa-8336-71724752f329" />
 
--   **dim_customers** — customer attributes
+-   **dim_customers** - customer attributes
     
--   **dim_products** — product attributes
+-   **dim_products** - product attributes
     
--   **fact_sales** — transactional fact table
+-   **fact_sales** - transactional fact table
     
 
 Key transformations:
@@ -107,3 +110,27 @@ The Gold layer enables analysis such as:
 -   Analytical SQL
     
 -   Troubleshooting Data Issues
+
+  ## **About Me**
+
+I'm passionate about **Data Engineering**, **ETL development**, and **analytics**.  
+I focus on creating efficient data flows, improving data quality, and designing models that support real business insights.
+
+My key strengths:
+
+-   Strong SQL (PostgreSQL)
+    
+-   ETL pipelines (Bronze → Silver → Gold)
+    
+-   Data Quality & Validation Rules
+    
+-   Data Modeling (Star Schema, Dimensions, Facts)
+    
+-   Analytical thinking & problem solving
+    
+
+I build projects to level up my skills and prepare for real-world data engineering roles.
+
+## 🔗 Links
+- **LinkedIn:** [Kamran Aliev]([https://www.linkedin.com/in/your-link/](https://www.linkedin.com/in/kamran-%C9%99liyev-131448251/))
+- **Email:** kamranaliev2@gmail.com
