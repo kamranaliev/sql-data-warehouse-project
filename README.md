@@ -132,5 +132,5 @@ My key strengths:
 I build projects to level up my skills and prepare for real-world data engineering roles.
 
 ## 🔗 Links
-- **LinkedIn:** [Kamran Aliev]([https://www.linkedin.com/in/your-link/](https://www.linkedin.com/in/kamran-%C9%99liyev-131448251/))
+- **LinkedIn:** [Kamran Aliev] https://www.linkedin.com/in/kamran-%C9%99liyev-131448251/
 - **Email:** kamranaliev2@gmail.com
