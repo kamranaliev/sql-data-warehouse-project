@@ -1,69 +1,94 @@
 # sql-data-warehouse-project
 Building a modern data warehouse with PostegreSQL , including ETL processes, data modeling, and analytics.
 
-📦 Data Warehouse & Analytics Project (PostgreSQL, Medallion Architecture)
+📦 Data Warehouse & Analytics Project (PostgreSQL)
 
-This project demonstrates a complete end-to-end data warehouse built using PostgreSQL and a modern Medallion Architecture (Bronze → Silver → Gold).
+This repository contains an end-to-end Data Warehouse built using PostgreSQL and the Medallion Architecture (Bronze → Silver → Gold).
+The goal is to demonstrate practical skills in data engineering, ETL, data modeling, and SQL analytics.
 
-It showcases practical skills in data engineering, SQL development, ETL pipelines, and analytical modeling.
+🔷 Architecture Overview
+Bronze Layer
 
-🔷 Project Overview
+Raw ingestion of CRM and ERP CSV files
 
-The goal of the project is to consolidate CRM and ERP datasets, clean and transform them, and design an analytical model optimized for reporting and business insights.
+No transformations applied
 
-🧱 Key Components
-1️⃣ Data Architecture — Medallion Design
+Silver Layer
 
-Bronze layer: Raw ingestion of CSV files
+Data cleaning and validation
 
-Silver layer: Data cleaning, validation, type fixes, deduplication
+Fixing corrupted dates
 
-Gold layer: Dimensional modeling (Fact + Dimension views)
+Handling nulls, negative values, inconsistent sales/price/quantity
 
-2️⃣ ETL Pipelines (SQL-based)
+Standardized and ready-for-modeling tables
 
-Data quality checks
+Gold Layer
 
-Date normalization and parsing
+Dimensional modeling (Fact + Dimension views)
 
-Surrogate key creation
+Surrogate key generation
 
-Business rules for sales totals, prices, and quantities
+Business-friendly analytical model
 
-Automated loading into Silver and Gold layers
+🧱 Data Model
 
-3️⃣ Data Modeling
+Star Schema:
 
-Designed a simplified star schema:
+dim_customers — customer attributes
 
-Dimensions: Customers, Products
+dim_products — product attributes
 
-Fact table: Sales
+fact_sales — transactional fact table
 
-Included surrogate keys, lookups, and slowly changing attributes (where applicable)
+Key transformations:
 
-4️⃣ Analytics & Reporting
+Repairing broken dates (YYYYMMDD)
 
-Created SQL analytical queries and metrics, such as:
+Recomputing sales = price × quantity
 
-Customer segmentation
+Normalizing price and quantity
 
-Product performance
+Left joins between CRM and ERP datasets
 
-Sales trends and revenue insights
+⚙️ ETL Logic
+
+Implemented with SQL (PostgreSQL)
+
+Silver-layer cleansing rules
+
+Automatic creation of surrogate keys
+
+Business-rule validation of financial data
+
+Reusable procedures and views
+
+📊 Analytics
+
+The Gold layer enables analysis such as:
+
+Sales performance
+
+Customer behavior
+
+Product profitability
+
+Time-based trends
 
 🎯 Skills Demonstrated
 
 SQL (PostgreSQL)
 
-ETL / Data Cleaning
+ETL development
+
+Data Quality Handling
 
 Data Warehouse Design
 
 Medallion Architecture
 
-Dimensional Modeling (Fact/Dim)
+Dimensional Modeling
 
 Analytical SQL
 
-Debugging data quality issues
+Troubleshooting Data Issues
