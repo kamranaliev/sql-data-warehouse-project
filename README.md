@@ -1,94 +1,109 @@
-# sql-data-warehouse-project
-Building a modern data warehouse with PostegreSQL , including ETL processes, data modeling, and analytics.
+ # **📦 Data Warehouse & Analytics Project (PostgreSQL)**
 
-📦 Data Warehouse & Analytics Project (PostgreSQL)
+This repository contains an end-to-end **Data Warehouse** built using **PostgreSQL** and the **Medallion Architecture (Bronze → Silver → Gold)**.  
+The goal is to demonstrate practical skills in **data engineering, ETL, data modeling, and SQL analytics**.
 
-This repository contains an end-to-end Data Warehouse built using PostgreSQL and the Medallion Architecture (Bronze → Silver → Gold).
-The goal is to demonstrate practical skills in data engineering, ETL, data modeling, and SQL analytics.
+----------
 
-🔷 Architecture Overview
-Bronze Layer
+## **🔷 Architecture Overview**
 
-Raw ingestion of CRM and ERP CSV files
+### **Bronze Layer**
 
-No transformations applied
+-   Raw ingestion of CRM and ERP CSV files
+    
+-   No transformations applied
+    
 
-Silver Layer
+### **Silver Layer**
 
-Data cleaning and validation
+-   Data cleaning and validation
+    
+-   Fixing corrupted dates
+    
+-   Handling nulls, negative values, inconsistent sales/price/quantity
+    
+-   Standardized and ready-for-modeling tables
+    
 
-Fixing corrupted dates
+### **Gold Layer**
 
-Handling nulls, negative values, inconsistent sales/price/quantity
+-   Dimensional modeling (Fact + Dimension views)
+    
+-   Surrogate key generation
+    
+-   Business-friendly analytical model
+    
 
-Standardized and ready-for-modeling tables
+----------
 
-Gold Layer
+## **🧱 Data Model**
 
-Dimensional modeling (Fact + Dimension views)
+**Star Schema:**
 
-Surrogate key generation
-
-Business-friendly analytical model
-
-🧱 Data Model
-
-Star Schema:
-
-dim_customers — customer attributes
-
-dim_products — product attributes
-
-fact_sales — transactional fact table
+-   **dim_customers** — customer attributes
+    
+-   **dim_products** — product attributes
+    
+-   **fact_sales** — transactional fact table
+    
 
 Key transformations:
 
-Repairing broken dates (YYYYMMDD)
+-   Repairing broken dates (YYYYMMDD)
+    
+-   Recomputing sales = price × quantity
+    
+-   Normalizing price and quantity
+    
+-   Left joins between CRM and ERP datasets
+    
 
-Recomputing sales = price × quantity
+----------
 
-Normalizing price and quantity
+## **⚙️ ETL Logic**
 
-Left joins between CRM and ERP datasets
+-   Implemented with SQL (PostgreSQL)
+    
+-   Silver-layer cleansing rules
+    
+-   Automatic creation of surrogate keys
+    
+-   Business-rule validation of financial data
+    
+-   Reusable procedures and views
+    
 
-⚙️ ETL Logic
+----------
 
-Implemented with SQL (PostgreSQL)
-
-Silver-layer cleansing rules
-
-Automatic creation of surrogate keys
-
-Business-rule validation of financial data
-
-Reusable procedures and views
-
-📊 Analytics
+## **📊 Analytics**
 
 The Gold layer enables analysis such as:
 
-Sales performance
+-   Sales performance
+    
+-   Customer behavior
+    
+-   Product profitability
+    
+-   Time-based trends
+    
 
-Customer behavior
+----------
 
-Product profitability
+## **🎯 Skills Demonstrated**
 
-Time-based trends
-
-🎯 Skills Demonstrated
-
-SQL (PostgreSQL)
-
-ETL development
-
-Data Quality Handling
-
-Data Warehouse Design
-
-Medallion Architecture
-
-Dimensional Modeling
-
-Analytical SQL
-
-Troubleshooting Data Issues
+-   SQL (PostgreSQL)
+    
+-   ETL development
+    
+-   Data Quality Handling
+    
+-   Data Warehouse Design
+    
+-   Medallion Architecture
+    
+-   Dimensional Modeling
+    
+-   Analytical SQL
+    
+-   Troubleshooting Data Issues
